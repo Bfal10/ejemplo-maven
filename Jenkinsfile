@@ -17,9 +17,9 @@ pipeline {
                     checkout(
                             [$class: 'GitSCM',
                             //Acá reemplazar por el nonbre de branch
-                            branches: [[name: "feature/sonar" ]],
+                            branches: [[name: "feature/testing" ]],
                             //Acá reemplazar por su propio repositorio
-                            userRemoteConfigs: [[url: 'https://github.com/diplodevops/ejemplo-maven-ceres.git']]])
+                            userRemoteConfigs: [[url: 'https://github.com/Bfal10/ejemplo-maven.git']]])
                 }
             }
         }
@@ -106,7 +106,7 @@ pipeline {
             steps {
                 script{
                     //sh "sleep 20 && curl -X GET 'http://localhost:8081/rest/mscovid/test?msg=testing'"
-                    sh "sleep 20 && newman run /tmp/ejemplo-maven.postman_collection.json"
+                    sh "sleep 20 && newman run ejemplo-maven.postman_collection.json"
                 }
             }
         }
