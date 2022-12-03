@@ -19,8 +19,8 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 500ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"pm.test(\"Response time is less than 5s\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -65,12 +65,13 @@
 							"});",
 							"pm.test(\"Mensaje == ok\", function () {",
 							"    var jsonData = pm.response.json();",
+							"    //console.log(jsonData)",
 							"    pm.expect(jsonData.mensaje).to.eql(\"ok\");",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 4s\", function () {",
+							"pm.test(\"Response time is less than 5s\", function () {",
 							"    //console.log(pm.response)",
-							"    pm.expect(pm.response.responseTime).to.be.below(4000);",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -123,8 +124,8 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 2s\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"pm.test(\"Response time is less than 5s\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -174,8 +175,8 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 2ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"pm.test(\"Response time is less than 5ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);",
 							"});"
 						],
 						"type": "text/javascript"
