@@ -14,10 +14,12 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    pm.expect(pm.response).to.have.code(200);",
+							"    //console.log(pm.response);",
+							"    //pm.expect(pm.response).to.have.code(200);",
+							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 200ms\", function () {",
+							"pm.test(\"Response time is less than 500ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(500);",
 							"});"
 						],
@@ -58,14 +60,17 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    //pm.response.to.have.status(200);",
 							"    //console.log(pm.response.code);",
-							"    pm.expect(pm.response).to.have.code(200);",
-							"    //pm.expect(pm.response.code).to.eql(200);",
+							"    pm.response.to.have.status(200);",
 							"});",
 							"pm.test(\"Mensaje == ok\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData.mensaje).to.eql(\"ok\");",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 4s\", function () {",
+							"    //console.log(pm.response)",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -75,13 +80,7 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(250);",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -121,12 +120,11 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    //console.log(pm.response.code);",
-							"    pm.expect(pm.response).to.have.code(200);",
-							"    //pm.response.to.have.status(200);",
+							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"pm.test(\"Response time is less than 2s\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -173,11 +171,11 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    //console.log(pm.response.code);",
-							"    pm.expect(pm.response).to.have.code(200);",
+							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 200ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"pm.test(\"Response time is less than 2ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
 							"});"
 						],
 						"type": "text/javascript"
