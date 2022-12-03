@@ -59,7 +59,7 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    //pm.response.to.have.status(200);",
-							"    console.log(pm.response.code);",
+							"    //console.log(pm.response.code);",
 							"    pm.expect(pm.response).to.have.code(200);",
 							"    //pm.expect(pm.response.code).to.eql(200);",
 							"});",
@@ -120,7 +120,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    console.log(pm.response.code);",
+							"    //console.log(pm.response.code);",
 							"    pm.expect(pm.response).to.have.code(200);",
 							"    //pm.response.to.have.status(200);",
 							"});",
@@ -172,7 +172,7 @@
 					"script": {
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
-							"    console.log(pm.response.code);",
+							"    //console.log(pm.response.code);",
 							"    pm.expect(pm.response).to.have.code(200);",
 							"});",
 							"",
