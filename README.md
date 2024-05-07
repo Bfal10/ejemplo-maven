@@ -43,6 +43,7 @@
 ### Compile Code
 docker run -it --rm -v ${pwd}:/code --workdir /code maven mvn clean compile -e
 
+Aaa
 ### Test Code
 docker run -it --rm -v ${pwd}:/code --workdir /code maven mvn clean test -e
 
